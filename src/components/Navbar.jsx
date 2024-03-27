@@ -5,7 +5,6 @@ import { addValue } from "../redux/features/inputSlice";
 import { addValue1 } from "../redux/features/input1Slice";
 
 const Navbar = () => {
-  // const addNumber = useSelector((state) => state.number.value);
   const value = useSelector((state) => state.value);
   const value1 = useSelector((state) => state.value1);
   const [form, setForm] = useState([]);
@@ -21,7 +20,7 @@ const Navbar = () => {
   const addToValue1 = (e) => {
     e.preventDefault();
     dispatch(addValue1(form1));
-    setForm1("");
+    setForm1([]);
   };
   let concat = value.value.reduce((acc, x) => acc.concat(+x.number), []);
   console.log(concat);
@@ -32,6 +31,23 @@ const Navbar = () => {
   console.log(concat1);
   const sum1 = concat1.reduce((a, b) => a + b, 0);
   console.log(sum1);
+  const change = (e) => {
+    const re = /^[0-9\b]+$/;
+    if (e.target.value === "" || re.test(e.target.value)) {
+      setForm(e.target.value);
+    } else {
+      alert("μαλακα μπουσουλα ξεκολλα");
+    }
+  };
+
+  const change1 = (e) => {
+    const re = /^[0-9\b]+$/;
+    if (e.target.value === "" || re.test(e.target.value)) {
+      setForm1(e.target.value);
+    } else {
+      alert("μαλακα μπουσουλα ξεκολλα");
+    }
+  };
 
   return (
     <div className="bg-[#EEEEEE] w-full h-[80px] flex items-center text-xl justify-evenly ">
@@ -46,7 +62,7 @@ const Navbar = () => {
           type="text"
           placeholder="points.."
           value={form}
-          onChange={(e) => setForm(e.target.value)}
+          onChange={change}
         />
         <button
           type="submit"
@@ -66,7 +82,7 @@ const Navbar = () => {
           type="text"
           placeholder="points.."
           value={form1}
-          onChange={(e) => setForm1(e.target.value)}
+          onChange={change1}
         />
         <button
           type="submit"

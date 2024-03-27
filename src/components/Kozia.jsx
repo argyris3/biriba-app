@@ -12,7 +12,7 @@ const Kozia = () => {
         className={
           activeButtonIndex === 0
             ? "activeCat"
-            : "bg-orange-600 rounded-full  hover:bg-blue-700"
+            : "bg-slate-600 rounded-full  hover:bg-blue-700"
         }
         onClick={() => setActiveButtonIndex(0)}
       >
@@ -22,7 +22,7 @@ const Kozia = () => {
         className={
           activeButtonIndex === 1
             ? "activeCat"
-            : "bg-orange-600 rounded-full  hover:bg-blue-700"
+            : "bg-slate-600 rounded-full  hover:bg-blue-700"
         }
         onClick={() => setActiveButtonIndex(1)}
       >
@@ -32,7 +32,7 @@ const Kozia = () => {
         className={
           activeButtonIndex === 2
             ? "activeCat"
-            : "bg-orange-600 rounded-full  hover:bg-blue-700"
+            : "bg-slate-600 rounded-full  hover:bg-blue-700"
         }
         onClick={() => setActiveButtonIndex(2)}
       >
@@ -42,7 +42,7 @@ const Kozia = () => {
         className={
           activeButtonIndex === 3
             ? "activeCat"
-            : "bg-orange-600 rounded-full  hover:bg-blue-700"
+            : "bg-slate-600 rounded-full  hover:bg-blue-700"
         }
         onClick={() => setActiveButtonIndex(3)}
       >
